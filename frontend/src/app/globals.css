@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-on-primary: #ffffff;
+  --color-on-primary-fixed: #001453;
+  --color-tertiary-fixed-dim: #ffb3ad;
+  --color-error-container: #ffdad6;
+  --color-surface-tint: #3755c3;
+  --color-primary-fixed-dim: #b8c4ff;
+  --color-surface-dim: #d8dadc;
+  --color-primary-fixed: #dde1ff;
+  --color-on-tertiary-fixed: #410004;
+  --color-on-surface: #191c1e;
+  --color-error: #ba1a1a;
+  --color-tertiary: #70000c;
+  --color-surface-bright: #f7f9fb;
+  --color-on-background: #191c1e;
+  --color-on-primary-fixed-variant: #173bab;
+  --color-surface-container: #eceef0;
+  --color-on-tertiary-fixed-variant: #930013;
+  --color-on-error: #ffffff;
+  --color-primary-container: #1e40af;
+  --color-on-tertiary-container: #ffa39c;
+  --color-on-secondary: #ffffff;
+  --color-outline: #757684;
+  --color-tertiary-fixed: #ffdad7;
+  --color-tertiary-container: #9b0015;
+  --color-inverse-primary: #b8c4ff;
+  --color-on-tertiary: #ffffff;
+  --color-surface-container-high: #e6e8ea;
+  --color-surface-container-lowest: #ffffff;
+  --color-secondary-fixed: #6ffbbe;
+  --color-on-secondary-container: #00714d;
+  --color-on-primary-container: #a8b8ff;
+  --color-on-error-container: #93000a;
+  --color-secondary: "#006c49";
+  --color-surface-container-highest: "#e0e3e5";
+  --color-background: #f7f9fb;
+  --color-inverse-on-surface: "#eff1f3";
+  --color-on-surface-variant: "#444653";
+  --color-on-secondary-fixed: "#002113";
+  --color-secondary-container: "#6cf8bb";
+  --color-surface-variant: "#e0e3e5";
+  --color-surface-container-low: "#f2f4f6";
+  --color-inverse-surface: "#2d3133";
+  --color-surface: "#f7f9fb";
+  --color-secondary-fixed-dim: "#4edea3";
+  --color-outline-variant: "#c4c5d5";
+  --color-on-secondary-fixed-variant: "#005236";
+  --color-primary: "#00288e";
+
+  --font-headline: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    min-height: max(884px, 100dvh);
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  vertical-align: middle;
+}
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
