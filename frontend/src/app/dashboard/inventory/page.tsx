@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function InventoryPage() {
   return (
     <>
@@ -13,14 +15,14 @@ export default function InventoryPage() {
             </p>
           </div>
           <div className="flex gap-3">
-            <button className="bg-surface-container-high text-on-surface px-5 py-2.5 rounded-lg font-semibold flex items-center gap-2 hover:bg-surface-container-highest transition-colors">
-              <span className="material-symbols-outlined text-[20px]">download</span>
-              Export
-            </button>
-            <button className="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-2.5 rounded-lg font-bold shadow-lg shadow-primary/20 flex items-center gap-2 active:scale-95 transition-transform">
+            <Link href="/dashboard/inventory/replenish" className="bg-surface-container-high text-on-surface px-5 py-2.5 rounded-lg font-semibold flex items-center gap-2 hover:bg-surface-container-highest transition-colors">
+              <span className="material-symbols-outlined text-[20px]">inventory_2</span>
+              Replenish Stock
+            </Link>
+            <Link href="/dashboard/inventory/add" className="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-2.5 rounded-lg font-bold shadow-lg shadow-primary/20 flex items-center gap-2 active:scale-95 transition-transform">
               <span className="material-symbols-outlined text-[20px]">add</span>
               Add Medication
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -100,6 +102,7 @@ export default function InventoryPage() {
             <tbody className="divide-y-0">
               {[
                 {
+                  id: "drug_A",
                   name: "Amoxicillin 500mg",
                   sku: "AMX-500-042",
                   category: "Antibiotic",
@@ -110,6 +113,7 @@ export default function InventoryPage() {
                   icon: "medication",
                 },
                 {
+                  id: "drug_B",
                   name: "Lisinopril 10mg",
                   sku: "LSN-010-881",
                   category: "Cardiology",
@@ -120,6 +124,7 @@ export default function InventoryPage() {
                   icon: "pill",
                 },
                 {
+                  id: "drug_C",
                   name: "Insulin Glargine",
                   sku: "INS-GLA-002",
                   category: "Endocrinology",
@@ -130,6 +135,7 @@ export default function InventoryPage() {
                   icon: "vaccines",
                 },
                 {
+                  id: "drug_D",
                   name: "Epinephrine Pen",
                   sku: "EPI-PEN-012",
                   category: "Emergency",
@@ -195,9 +201,11 @@ export default function InventoryPage() {
                     </span>
                   </td>
                   <td className="px-6 py-5 text-right">
-                    <span className="material-symbols-outlined text-outline group-hover:text-primary transition-colors">
-                      chevron_right
-                    </span>
+                    <Link href={`/dashboard/inventory/${item.id}`}>
+                      <span className="material-symbols-outlined text-outline group-hover:text-primary transition-colors hover:bg-surface-container-high rounded-full p-1 cursor-pointer">
+                        chevron_right
+                      </span>
+                    </Link>
                   </td>
                 </tr>
               ))}

@@ -12,5 +12,6 @@ app.register_blueprint(predict_bp)
 def hello():
     return "Flask server running"
 
+print("app show in 5000")
 if __name__ == "__main__":
     app.run(port=5000, debug=True)
