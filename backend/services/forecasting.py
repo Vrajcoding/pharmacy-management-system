@@ -35,17 +35,21 @@ def get_monthly_consumption(drug_id):
         print("Warning: Firestore client is not initialized. Using fallback mock data.")
         return _get_mock_data(drug_id)
 
-    # Fetch logs for the specific drug
+    # Fetch logs for the specific drug.
+    # Field names follow the Firestore schema defined in ROADMAP.md:
+    #   dispensingLogs/{logId}.drugId       → camelCase drug identifier
+    #   dispensingLogs/{logId}.dispensedAt  → Firestore Timestamp of dispensing event
+    #   dispensingLogs/{logId}.quantityGiven → units dispensed per transaction
     try:
         logs_ref = db.collection('dispensingLogs')
-        docs = logs_ref.where('drug_id', '==', drug_id).stream()
+        docs = logs_ref.where('drugId', '==', drug_id).stream()
 
         records = []
         for doc in docs:
             data = doc.to_dict()
             records.append({
-                'timestamp': data.get('timestamp'),
-                'quantity': data.get('quantity', 0)
+                'timestamp': data.get('dispensedAt'),
+                'quantity': data.get('quantityGiven', data.get('quantity', 0))
             })
     except Exception as e:
         print(f"Error accessing Firestore: {e}. Using fallback mock data.")
