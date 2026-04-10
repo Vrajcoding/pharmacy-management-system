@@ -1,27 +1,32 @@
 THE PROBLEM
 Government hospital pharmacies in India manage hundreds of drug types on paper registers or basic
 spreadsheets. This causes three big problems at the same time:
+
 • Critical medicines run out with no warning
 • Medicines worth crores expire unused because they're dispensed in the wrong order
 • Procurement decisions are based on guesswork with no data to back them up
 The pharmacy that should be saving lives is instead creating avoidable waste and avoidable shortages — at
 the same time.
 WHAT TO BUILD
+
 A web-based pharmacy management system that:
 • Follows FEFO (First Expiry, First Out) — always dispenses the batch that expires soonest
 • Sends automatic alerts when stock is low or medicines are close to expiry
 • Uses ML to predict how much of each drug will be needed and suggests reorder quantities
 • Has separate access levels for Pharmacists, Store Managers, and Admins
+
 Everything runs on Firebase — no server setup needed.
 WHO USES IT
 • Pharmacists dispensing medicines daily
 • Store managers overseeing stock levels
 • Hospital admins tracking inventory value and waste
 WHY IT MATTERS
+
 • Prevents medicine shortages that can be life-threatening (e.g. insulin, antibiotics)
 • Stops crores of drug waste caused by wrong dispensing order
 • Gives procurement teams actual data instead of guesswork
 • Works immediately — no IT team or server required
+
 AI-Powered Drug Inventory &
 Expiry Alert System for Hospital Pharmacies
 TECH THAT CAN BE USED
